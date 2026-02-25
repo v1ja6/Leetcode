@@ -1,0 +1,13 @@
+Intuition
+I knew instantly that this question will require me to employ the usage of for loops in order to recurse through the values
+
+Approach
+This code starts with a list called "new", which initially contains a single value, 0. The for loop takes one integer at a time from the nums list (e.g. 1 from [1, 2, 3, 4, 5]). 
+The loop then adds this integer to the last value in new. Since 0 + 1 = 1, the new value becomes 1. I then append this value back to the new list (so it becomes [0, 1]). 
+Because the last value in new (new[-1]) is always the sum of all previous numbers, the code gradually builds the cumulative sum of the list. 
+However, since I initially added 0 to the list to avoid an error, that 0 will always remain as the first element (e.g. [0, 1, 3, 7]). 
+Therefore, I had to remove it using "new.pop(0)". After that, the list returns the correct cummulative values.
+
+Potential Improvement
+I do not like the fact that I had to give a value to the new list and then remove it using new.pop(0).
+I wasn’t sure of another way to add the last number, because if I had started with new = [], then new[-1] would give me an error.

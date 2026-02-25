@@ -1,0 +1,16 @@
+Firstly I created 3 lists: "merged" (Which is used to stoed the final merged word as a string), list1 and list2 (where list1 is used to store word1 in the form of a list and list2 is used to store word2 in the form of a list )
+Then, I used to 'for' loops to extract each letter from "word1" and "word2" and append it to the respective list.
+Now we can focus on the main part of the code. Firstly, a 'while' loop is being used to form the backbone of code. 
+Since the problem reuqires us to alternate between the letters in word1 and word2, We will need to created nested while loops: The main while loop helps to loop between the 2 nested while loops till all the letters in both word1 and word2 are used up. 
+So, the first 'if' statement: if len(list1) == 0 and len(list2) == 0, helps check the number of letters left in the either list. 
+Once all letters have been used up, both of the lengths will become 0 and this will cause the main loop to break.
+Now, if this condition is not true, the loop moves on to the else statement. 
+Here, you will see a variable called "looper". I use this varaible to loop through the three different while loops inside the main while loop. 
+I create another if statement to focus purely on situations wherby looper is 1 or 2.
+Inside each of this "while" loop (Yes I know its getting confusing) there is a if, elif and a else statement.
+The if statement checks whether list1 and list2 have any other letters inside.
+If not, it assigns looper as 3 which helps to break out of the entire nested loop. 
+The 'elif' statement only checks if the the other word's list is 0.
+For example, if len(list2) = 0, and looper = 2, it realises that list2 is 0 so there is no letters to append to merged and hence it will make looper = 1 and trigger the other while loop that focuses on appending list1 letters. 
+Finally, the else statement simply appends the letters, then removes them, and changes looper to the other on, so '1 to 2' or '2 to 1'.
+Finally, we will return ''.join(merged) to return the list as a string.
